@@ -18,6 +18,9 @@ const jetbrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
+  verification: {
+    google: "cV-ODgvVlUsRFISj7N9KsCLNknns2oJqnKfd5DLNtjk",
+  },
   title: "MedFlow — Automação Inteligente para Clínicas Médicas",
   description:
     "Transforme leads em pacientes com IA. Qualificação automática, agendamento inteligente e nurturing 24/7 pelo WhatsApp. Mais consultas, menos no-show.",
