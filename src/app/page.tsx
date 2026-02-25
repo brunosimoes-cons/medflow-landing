@@ -33,12 +33,32 @@ function buildWhatsAppLink(): string {
 }
 
 // ─── Tracking ───
+declare global {
+  interface Window {
+    dataLayer: Record<string, unknown>[];
+    fbq: (...args: unknown[]) => void;
+  }
+}
+
 function trackEvent(event: string, data?: Record<string, string>) {
-  if (typeof window !== "undefined" && "dataLayer" in window) {
-    (window as unknown as { dataLayer: Record<string, unknown>[] }).dataLayer.push({
-      event,
-      ...data,
-    });
+  // GTM dataLayer
+  if (typeof window !== "undefined" && window.dataLayer) {
+    window.dataLayer.push({ event, ...data });
+  }
+
+  // Meta Pixel
+  if (typeof window !== "undefined" && window.fbq) {
+    switch (event) {
+      case "whatsapp_click":
+        window.fbq("track", "Contact", { content_name: data?.location });
+        break;
+      case "cta_click":
+        window.fbq("trackCustom", "CTAClick", { location: data?.location });
+        break;
+      case "scroll_depth":
+        window.fbq("trackCustom", "ScrollDepth", { depth: data?.depth });
+        break;
+    }
   }
 }
 
