@@ -98,7 +98,7 @@ const organizationSchema = {
   logo: "https://medflowhub.com.br/logo.png",
   contactPoint: {
     "@type": "ContactPoint",
-    telephone: "+55-31-99775-0330",
+    telephone: "+55-31-99733-2026",
     contactType: "sales",
     availableLanguage: "Portuguese",
   },

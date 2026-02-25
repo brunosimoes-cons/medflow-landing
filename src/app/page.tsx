@@ -22,7 +22,7 @@ function getUtmParams(): Record<string, string> {
 }
 
 function buildWhatsAppLink(): string {
-  const base = "https://wa.me/5531997750330";
+  const base = "https://wa.me/5531997332026";
   const msg = "Oi! Quero saber mais sobre o MedFlow";
   const utms = getUtmParams();
   const utmStr = Object.entries(utms)
