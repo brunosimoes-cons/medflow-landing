@@ -118,8 +118,8 @@ function Nav() {
             src="/logo.png"
             alt="MedFlow"
             width={48}
-            height={48}
-            className="h-10 w-10"
+            height={32}
+            className="h-8 w-auto"
             priority
           />
           <span className="text-xl font-bold gradient-text">MedFlow</span>
@@ -636,8 +636,8 @@ function Footer() {
               src="/logo.png"
               alt="MedFlow"
               width={32}
-              height={32}
-              className="h-8 w-8 opacity-60"
+              height={21}
+              className="h-6 w-auto opacity-60"
             />
             <span className="text-lg font-semibold text-muted/60">MedFlow</span>
           </div>
